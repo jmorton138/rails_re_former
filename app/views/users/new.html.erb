@@ -1,3 +1,18 @@
+<%= form_with model: @user do |form| %>
+    <%= form.label :username, "Username:"  %>
+    <%= form.text_field :username, placeholder: "username", value: "Foo" %><br><br>
+    <%= form.label :email, "Email:" %>
+    <%= form.email_field :email , placeholder: "Email"%><br><br>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password , placeholder: "Password" %><br><br>
+    <%= form.submit "Submit" %>
+    
+<% end%>
+
+
+
+
+
 <% 
 =begin %> 
 <form action="/users" method="post" accept-charset="UTF-8">
@@ -14,6 +29,9 @@
 <%
 =end %>
 
+<%
+=begin %>
+
 <%= form_tag('/users', method: :post) do %>
     <%= label_tag(:username, "Username:") %>
     <%= text_field_tag(:username) %><br><br>
@@ -23,3 +41,6 @@
     <%= text_field_tag(:password) %><br><br>
     <%= submit_tag("Submit") %>
 <% end %>
+
+<%
+=end %>
